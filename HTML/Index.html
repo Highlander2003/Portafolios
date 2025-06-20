@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Ingeniero de Sistemas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="/css/style-Index.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300">
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-sm py-4 fixed w-full z-10 transition-colors duration-300 dark:bg-gray-800 dark:text-white">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Mi Portafolio</a>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium transition-colors duration-200">Sobre Mí</a></li>
+                <li><a href="#skills" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium transition-colors duration-200">Habilidades</a></li>
+                <li><a href="#projects" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium transition-colors duration-200">Proyectos</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 font-medium transition-colors duration-200">Contacto</a></li>
+                <li>
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-700 text-gray-300 hover:bg-gray-600 transition-colors duration-200">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content wrapper -->
+    <main class="pt-20">
+        <!-- Hero Section con nuevo fondo interactivo -->
+        <section id="hero" class="text-white py-24 px-4 text-center rounded-b-3xl shadow-2xl animate-fade-in relative overflow-hidden hero-gradient-bg">
+            <!-- Fondo con esferas de gradiente -->
+            <div class="gradient-background">
+                <div class="gradient-sphere sphere-1"></div>
+                <div class="gradient-sphere sphere-2"></div>
+                <div class="gradient-sphere sphere-3"></div>
+                <div class="glow"></div>
+                <div class="grid-overlay"></div>
+                <div class="noise-overlay"></div>
+                <div class="particles-container" id="particles-container"></div>
+            </div>
+            
+            <div class="container mx-auto relative z-10">
+                <!-- Tu contenido del hero aquí -->
+                <div class="mb-8">
+                    <img src="https://placehold.co/180x180/667eea/ffffff?text=LF" alt="Foto de perfil" class="rounded-full mx-auto mb-6 w-44 h-44 object-cover border-4 border-white shadow-2xl transform transition-transform duration-300 hover:scale-110 hover:shadow-purple-500/50">
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-6xl md:text-7xl font-extrabold mb-6 animate-slide-up bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                        Luis Fernando Caicedo
+                    </h1>
+                    <p class="text-2xl md:text-3xl mb-4 animate-slide-up animation-delay-100 font-light">
+                        Ingeniero de Sistemas
+                    </p>
+                    <p class="text-xl mb-8 animate-slide-up animation-delay-200 text-purple-100 max-w-2xl mx-auto">
+                        Transformando ideas en soluciones tecnológicas innovadoras
+                    </p>
+                    
+                    <!-- Botones -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#projects" class="btn-primary px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-white">
+                            <i class="fas fa-rocket mr-2"></i>Ver Mis Proyectos
+                        </a>
+                        <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-envelope mr-2"></i>Contactarme
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-16 px-4 bg-white dark:bg-gray-900 rounded-xl shadow-md mx-auto max-w-6xl my-10 transform transition-transform duration-300 hover:scale-[1.01] animate-fade-in">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-10 text-gray-800 dark:text-white">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Sobre Mí
+                    </span>
+                </h2>
+                <div class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-center">
+                    <p class="mb-4">
+                        Soy un ingeniero de sistemas con una sólida base en el desarrollo de software y la resolución de problemas complejos. Mi enfoque principal radica en la creación de aplicaciones robustas, escalables y eficientes, utilizando las últimas tecnologías y mejores prácticas de la industria.
+                    </p>
+                    <p>
+                        He trabajado en varios proyectos que abarcan desde el desarrollo web full-stack hasta la implementación de bases de datos y la automatización de procesos. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades para ofrecer soluciones de alta calidad.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 bg-gray-100 dark:bg-gray-800 rounded-3xl shadow-2xl mx-auto max-w-7xl my-16 animate-fade-in">
+            <div class="container mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-4 text-gray-800 dark:text-white">
+                    Tecnologías & Herramientas
+                </h2>
+                <p class="text-xl text-center mb-12 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Dominio de tecnologías modernas para crear soluciones robustas y escalables
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <!-- Python -->
+                    <div class="skill-card glass-card hover-glow flex flex-col items-center p-6 rounded-2xl transition-all duration-300">
+                        <i class="fab fa-python text-6xl text-blue-400 mb-4"></i>
+                        <span class="text-lg font-semibold text-white">Python</span>
+                        <div class="w-full skill-progress bg-gray-700 rounded-full h-3 mt-3">
+                            <div class="skill-progress-fill bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full" style="width: 90%"></div>
+                        </div>
+                        <span class="text-xs text-gray-400 mt-1">90%</span>
+                    </div>
+                    
+                    <!-- Java -->
+                    <div class="skill-card glass-card hover-glow flex flex-col items-center p-6 rounded-2xl transition-all duration-300">
+                        <i class="fab fa-java text-6xl text-red-500 mb-4"></i>
+                        <span class="text-lg font-semibold text-white">Java</span>
+                        <div class="w-full skill-progress bg-gray-700 rounded-full h-3 mt-3">
+                            <div class="skill-progress-fill bg-gradient-to-r from-red-400 to-red-600 h-3 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <span class="text-xs text-gray-400 mt-1">85%</span>
+                    </div>
+                    
+                    <!-- JavaScript -->
+                    <div class="skill-card glass-card hover-glow flex flex-col items-center p-6 rounded-2xl transition-all duration-300">
+                        <i class="fab fa-js-square text-6xl text-yellow-400 mb-4"></i>
+                        <span class="text-lg font-semibold text-white">JavaScript</span>
+                        <div class="w-full skill-progress bg-gray-700 rounded-full h-3 mt-3">
+                            <div class="skill-progress-fill bg-gradient-to-r from-yellow-400 to-yellow-600 h-3 rounded-full" style="width: 88%"></div>
+                        </div>
+                        <span class="text-xs text-gray-400 mt-1">88%</span>
+                    </div>
+                    
+                    <!-- HTML -->
+                    <div class="skill-card glass-card hover-glow flex flex-col items-center p-6 rounded-2xl transition-all duration-300">
+                        <i class="fab fa-html5 text-6xl text-orange-500 mb-4"></i>
+                        <span class="text-lg font-semibold text-white">HTML</span>
+                        <div class="w-full skill-progress bg-gray-700 rounded-full h-3 mt-3">
+                            <div class="skill-progress-fill bg-gradient-to-r from-orange-400 to-orange-600 h-3 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <span class="text-xs text-gray-400 mt-1">95%</span>
+                    </div>
+                    
+                    <!-- CSS -->
+                    <div class="skill-card glass-card hover-glow flex flex-col items-center p-6 rounded-2xl transition-all duration-300">
+                        <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
+                        <span class="text-lg font-semibold text-white">CSS</span>
+                        <div class="w-full skill-progress bg-gray-700 rounded-full h-3 mt-3">
+                            <div class="skill-progress-fill bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full" style="width: 92%"></div>
+                        </div>
+                        <span class="text-xs text-gray-400 mt-1">92%</span>
+                    </div>
+                    
+                    <!-- SQL -->
+                    <div class="skill-card glass-card hover-glow flex flex-col items-center p-6 rounded-2xl transition-all duration-300">
+                        <i class="fas fa-database text-6xl text-green-500 mb-4"></i>
+                        <span class="text-lg font-semibold text-white">SQL</span>
+                        <div class="w-full skill-progress bg-gray-700 rounded-full h-3 mt-3">
+                            <div class="skill-progress-fill bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style="width: 87%"></div>
+                        </div>
+                        <span class="text-xs text-gray-400 mt-1">87%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 bg-white dark:bg-gray-900 rounded-3xl shadow-2xl mx-auto max-w-7xl my-16 animate-fade-in">
+            <div class="container mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-4 text-gray-800 dark:text-white">
+                    Proyectos Destacados
+                </h2>
+                <p class="text-xl text-center mb-16 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Una muestra de mi trabajo y experiencia en desarrollo de software
+                </p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <!-- Project Card 1 - Sistema CRM -->
+                    <div class="glass-card hover-glow rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <div class="relative">
+                            <img src="https://placehold.co/400x250/667eea/ffffff?text=Sistema+CRM" alt="Proyecto 1" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <span class="bg-green-500 text-xs px-2 py-1 rounded-full">Completado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-white">Sistema CRM Avanzado</h3>
+                            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                                Plataforma completa de gestión de relaciones con clientes, incluyendo análisis predictivo y automatización de ventas.
+                            </p>
+                            
+                            <!-- Tech stack con mejor diseño -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fab fa-python mr-1"></i> Python
+                                </span>
+                                <span class="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fas fa-database mr-1"></i> PostgreSQL
+                                </span>
+                                <span class="bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fab fa-react mr-1"></i> React
+                                </span>
+                            </div>
+                            
+                            <!-- Métricas del proyecto -->
+                            <div class="grid grid-cols-3 gap-4 mb-6 text-center">
+                                <div>
+                                    <div class="text-purple-400 font-bold text-lg">500+</div>
+                                    <div class="text-gray-400 text-xs">Usuarios</div>
+                                </div>
+                                <div>
+                                    <div class="text-blue-400 font-bold text-lg">99.9%</div>
+                                    <div class="text-gray-400 text-xs">Uptime</div>
+                                </div>
+                                <div>
+                                    <div class="text-green-400 font-bold text-lg">3ms</div>
+                                    <div class="text-gray-400 text-xs">Response</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center btn-primary py-2 rounded-lg font-semibold transition-all duration-200">
+                                    <i class="fab fa-github mr-2"></i>Código
+                                </a>
+                                <a href="#" class="flex-1 text-center border border-purple-400 text-purple-400 py-2 rounded-lg font-semibold hover:bg-purple-400 hover:text-white transition-all duration-200">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 - E-commerce Platform -->
+                    <div class="glass-card hover-glow rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <div class="relative">
+                            <img src="https://placehold.co/400x250/7c3aed/ffffff?text=E-commerce+Platform" alt="Proyecto 2" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <span class="bg-blue-500 text-xs px-2 py-1 rounded-full">En desarrollo</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-yellow-500 text-black text-xs px-2 py-1 rounded-full font-semibold">
+                                    <i class="fas fa-star mr-1"></i>Featured
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-white">Plataforma E-commerce</h3>
+                            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                                Tienda online completa con carrito de compras, pasarela de pagos, inventario en tiempo real y panel administrativo avanzado.
+                            </p>
+                            
+                            <!-- Tech stack -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fab fa-js-square mr-1"></i> JavaScript
+                                </span>
+                                <span class="bg-gradient-to-r from-green-600 to-green-700 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fab fa-node-js mr-1"></i> Node.js
+                                </span>
+                                <span class="bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fas fa-database mr-1"></i> MongoDB
+                                </span>
+                                <span class="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fab fa-react mr-1"></i> Next.js
+                                </span>
+                            </div>
+                            
+                            <!-- Métricas del proyecto -->
+                            <div class="grid grid-cols-3 gap-4 mb-6 text-center">
+                                <div>
+                                    <div class="text-cyan-400 font-bold text-lg">1.2K+</div>
+                                    <div class="text-gray-400 text-xs">Productos</div>
+                                </div>
+                                <div>
+                                    <div class="text-green-400 font-bold text-lg">250+</div>
+                                    <div class="text-gray-400 text-xs">Ventas/día</div>
+                                </div>
+                                <div>
+                                    <div class="text-purple-400 font-bold text-lg">98%</div>
+                                    <div class="text-gray-400 text-xs">Satisfacción</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center btn-primary py-2 rounded-lg font-semibold transition-all duration-200">
+                                    <i class="fab fa-github mr-2"></i>Código
+                                </a>
+                                <a href="#" class="flex-1 text-center border border-cyan-400 text-cyan-400 py-2 rounded-lg font-semibold hover:bg-cyan-400 hover:text-white transition-all duration-200">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 - Sistema de Gestión Académica -->
+                    <div class="glass-card hover-glow rounded-2xl overflow-hidden transform transition-all duration-300 hover:scale-105">
+                        <div class="relative">
+                            <img src="https://placehold.co/400x250/dc2626/ffffff?text=Sistema+Academico" alt="Proyecto 3" class="w-full h-48 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <span class="bg-green-500 text-xs px-2 py-1 rounded-full">Completado</span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                                    <i class="fas fa-trophy mr-1"></i>Award
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-3 text-white">Sistema Gestión Académica</h3>
+                            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                                Sistema integral para instituciones educativas con gestión de estudiantes, profesores, calificaciones y reportes automatizados.
+                            </p>
+                            
+                            <!-- Tech stack -->
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-gradient-to-r from-red-500 to-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fab fa-java mr-1"></i> Java
+                                </span>
+                                <span class="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fas fa-leaf mr-1"></i> Spring Boot
+                                </span>
+                                <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fas fa-database mr-1"></i> MySQL
+                                </span>
+                                <span class="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center">
+                                    <i class="fab fa-html5 mr-1"></i> Thymeleaf
+                                </span>
+                            </div>
+                            
+                            <!-- Métricas del proyecto -->
+                            <div class="grid grid-cols-3 gap-4 mb-6 text-center">
+                                <div>
+                                    <div class="text-red-400 font-bold text-lg">2.5K+</div>
+                                    <div class="text-gray-400 text-xs">Estudiantes</div>
+                                </div>
+                                <div>
+                                    <div class="text-orange-400 font-bold text-lg">150+</div>
+                                    <div class="text-gray-400 text-xs">Profesores</div>
+                                </div>
+                                <div>
+                                    <div class="text-yellow-400 font-bold text-lg">95%</div>
+                                    <div class="text-gray-400 text-xs">Eficiencia</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-3">
+                                <a href="#" class="flex-1 text-center btn-primary py-2 rounded-lg font-semibold transition-all duration-200">
+                                    <i class="fab fa-github mr-2"></i>Código
+                                </a>
+                                <a href="#" class="flex-1 text-center border border-red-400 text-red-400 py-2 rounded-lg font-semibold hover:bg-red-400 hover:text-white transition-all duration-200">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón para ver más proyectos -->
+                <div class="text-center mt-12">
+                    <a href="#" class="inline-flex items-center px-8 py-3 btn-primary rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-eye mr-2"></i>Ver Todos los Proyectos
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 px-4 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md mx-auto max-w-6xl my-10 animate-fade-in">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-10 text-gray-800 dark:text-white">Contáctame</h2>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                    Estoy abierto a nuevas oportunidades y colaboraciones. ¡No dudes en ponerte en contacto!
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:tu.email@example.com" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600 text-xl flex items-center transition-colors duration-200">
+                        <i class="fas fa-envelope mr-2"></i> tu.email@example.com
+                    </a>
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600 text-xl flex items-center transition-colors duration-200">
+                        <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/tu-usuario" target="_blank" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-600 text-xl flex items-center transition-colors duration-200">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer siempre en la parte inferior -->
+    <footer class="bg-gray-800 text-white py-8 text-center dark:bg-gray-950">
+        <div class="container mx-auto px-4">
+            <div class="border-t border-gray-700 dark:border-gray-600 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <p class="text-sm">&copy; 2024 Luis Fernando Caicedo. Todos los derechos reservados.</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Forzar el modo oscuro por defecto
+        document.documentElement.classList.add('dark');
+        
+        // Cargar el script principal
+        const script = document.createElement('script');
+        script.src = "/JS/script.js";
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>

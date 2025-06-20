@@ -1,0 +1,580 @@
+/* Custom styles for the portfolio with dark blue/purple theme */
+:root {
+  --dark-bg-primary: #121630;
+  --dark-bg-secondary: #1a1b3c;
+  --dark-bg-tertiary: #242654;
+  --dark-nav-bg: #0d102a;
+  --accent-blue: #4361ee;
+  --accent-blue-light: #4895ef;
+  --accent-purple: #7b2cbf;
+  --accent-purple-light: #9d4edd;
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e0;
+  --card-bg: #1e213f;
+  --gradient-hero: linear-gradient(to right, #303f9f, #7b1fa2);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-card: linear-gradient(145deg, #1e213f 0%, #2a2d5f 100%);
+  --glow-purple: 0 0 30px rgba(123, 44, 191, 0.3);
+  --glow-blue: 0 0 30px rgba(67, 97, 238, 0.3);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--dark-bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Make dark mode the default */
+header {
+  background-color: var(--dark-nav-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+header nav a.text-blue-600 {
+  color: var(--accent-blue-light) !important;
+}
+
+header nav a {
+  color: var(--text-primary) !important;
+}
+
+header nav a:hover {
+  color: var(--accent-purple-light) !important;
+}
+
+/* Hero section con fondo interactivo */
+#hero {
+  position: relative;
+  overflow: hidden;
+  background: #050505;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fondo con esferas de gradiente */
+.gradient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.gradient-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.sphere-1 {
+  width: 40vw;
+  height: 40vw;
+  background: linear-gradient(40deg, rgba(255, 0, 128, 0.8), rgba(255, 102, 0, 0.4));
+  top: -10%;
+  left: -10%;
+  animation: float-1 15s ease-in-out infinite alternate;
+}
+
+.sphere-2 {
+  width: 45vw;
+  height: 45vw;
+  background: linear-gradient(240deg, rgba(72, 0, 255, 0.8), rgba(0, 183, 255, 0.4));
+  bottom: -20%;
+  right: -10%;
+  animation: float-2 18s ease-in-out infinite alternate;
+}
+
+.sphere-3 {
+  width: 30vw;
+  height: 30vw;
+  background: linear-gradient(120deg, rgba(133, 89, 255, 0.5), rgba(98, 216, 249, 0.3));
+  top: 60%;
+  left: 20%;
+  animation: float-3 20s ease-in-out infinite alternate;
+}
+
+.noise-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  z-index: 5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Asegurar que el contenido esté por encima del fondo */
+#hero .container {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Efectos adicionales para el hero */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+/* Animaciones de las esferas */
+@keyframes float-1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(10%, 10%) scale(1.1);
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-10%, -5%) scale(1.15);
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-5%, 10%) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  width: 40vw;
+  height: 40vh;
+  background: radial-gradient(circle, rgba(72, 0, 255, 0.15), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: pulse 8s infinite alternate;
+  filter: blur(30px);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Footer siempre en la parte inferior */
+footer {
+  background-color: var(--dark-nav-bg) !important;
+  margin-top: auto;
+  flex-shrink: 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  border-top: 1px solid rgba(123, 44, 191, 0.2);
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Hover effects para los iconos del footer */
+footer a {
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  transform: translateY(-2px);
+  color: var(--accent-purple-light) !important;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  footer {
+    padding: 1.5rem 0;
+  }
+  
+  footer .flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  footer .space-x-4 {
+    gap: 1.5rem;
+  }
+}
+
+/* Estilos para secciones */
+section {
+  background-color: var(--dark-bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(123, 44, 191, 0.2) !important;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(67, 97, 238, 0.1) !important;
+}
+
+.bg-white, .bg-gray-50, .bg-gray-100 {
+  background-color: var(--dark-bg-tertiary) !important;
+}
+
+.text-gray-700, .text-gray-800 {
+  color: var(--text-secondary) !important;
+}
+
+.border-gray-200 {
+  border-color: var(--dark-bg-tertiary) !important;
+}
+
+/* Style fixes for skills section */
+#skills .flex-shrink-0 {
+  background-color: var(--card-bg) !important;
+}
+
+/* Project cards */
+#projects .bg-gray-50 {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--dark-bg-tertiary);
+}
+
+/* Button styles */
+.bg-blue-600 {
+  background-color: var(--accent-purple) !important;
+}
+
+.bg-blue-600:hover {
+  background-color: var(--accent-purple-light) !important;
+}
+
+.text-blue-600, .text-blue-800 {
+  color: var(--accent-blue-light) !important;
+}
+
+.text-blue-600:hover {
+  color: var(--accent-purple-light) !important;
+}
+
+/* Custom scrollbar for horizontal skills section */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animation enhancements */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hero con fondo de gradientes animados */
+#hero {
+  position: relative;
+  overflow: hidden;
+  background: #050505;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-gradient-bg {
+  background: #050505 !important;
+}
+
+/* Animación de entrada para los skill blocks */
+.skill-block {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skills-visible .skill-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto de pulso suave en hover */
+@keyframes gentle-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.skill-block:hover .skill-block__item {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+/* Gradientes modernos */
+:root {
+  /* ...existing variables... */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-card: linear-gradient(145deg, #1e213f 0%, #2a2d5f 100%);
+  --glow-purple: 0 0 30px rgba(123, 44, 191, 0.3);
+  --glow-blue: 0 0 30px rgba(67, 97, 238, 0.3);
+}
+
+/* Estilos adicionales para las tarjetas de proyectos */
+#projects .glass-card {
+  border: 2px solid rgba(123, 44, 191, 0.4) !important;
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(123, 44, 191, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efectos especiales para badges de estado */
+.glass-card .bg-green-500,
+.glass-card .bg-blue-500,
+.glass-card .bg-yellow-500,
+.glass-card .bg-red-500 {
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación para los iconos de tecnologías */
+.glass-card .flex.items-center i {
+  transition: transform 0.2s ease;
+}
+
+.glass-card:hover .flex.items-center i {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* Estilos para métricas de proyectos */
+.glass-card .grid .text-lg {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón "Ver Todos los Proyectos" */
+.btn-primary {
+  background: var(--gradient-primary) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6) !important;
+}
+
+/* Responsive adjustments para proyectos */
+@media (max-width: 1024px) {
+  #projects .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #projects .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .glass-card .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .glass-card .text-lg {
+    font-size: 1rem;
+  }
+  
+  .glass-card .text-xs {
+    font-size: 0.625rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 70px;
+  }
+  
+  body.has-fixed-footer {
+    padding-bottom: 70px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sphere-1, .sphere-2, .sphere-3 {
+        width: 60vw;
+        height: 60vw;
+    }
+    
+    .glow {
+        width: 60vw;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .sphere-1, .sphere-2, .sphere-3 {
+        width: 80vw;
+        height: 80vw;
+    }
+    
+    #hero {
+        min-height: 90vh;
+    }
+}
+
+/* Estilos para las partículas interactivas */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, opacity;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* Variaciones de partículas para mayor dinamismo */
+.particle:nth-child(odd) {
+    background: rgba(164, 224, 255, 0.8);
+    box-shadow: 0 0 8px rgba(164, 224, 255, 0.4);
+}
+
+.particle:nth-child(3n) {
+    background: rgba(255, 182, 255, 0.8);
+    box-shadow: 0 0 8px rgba(255, 182, 255, 0.4);
+}
+
+.particle:nth-child(5n) {
+    background: rgba(182, 255, 182, 0.8);
+    box-shadow: 0 0 8px rgba(182, 255, 182, 0.4);
+}
+
+/* Animación de twinkle para las partículas */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.particle.twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+/* Efectos especiales para partículas del mouse */
+.particle.mouse-particle {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.3) 70%, transparent 100%);
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Optimizaciones de rendimiento */
+.particles-container * {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Responsive adjustments para partículas */
+@media (max-width: 768px) {
+    .particles-container {
+        opacity: 0.7;
+    }
+    
+    .particle {
+        box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+    }
+}
+
+@media (max-width: 480px) {
+    .particles-container {
+        opacity: 0.5;
+    }
+}
+
+/* Efectos adicionales para el hero */
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(255, 255, 255, 0.03) 0%, 
+        transparent 30%
+    );
+    pointer-events: none;
+    z-index: 4;
+    transition: background 0.3s ease;
+    mix-blend-mode: overlay;
+}
