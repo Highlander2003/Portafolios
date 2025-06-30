@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Ingeniero de Sistemas</title>
+    <link rel="stylesheet" href="style-Index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navegación Moderna -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo con efecto -->
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-name">Luis Fernando</span>
+                        <span class="logo-title">Systems Engineer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menú principal -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#inicio" class="nav-link active">
+                        <i class="fas fa-home"></i>
+                        <span>Inicio</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sobre-mi" class="nav-link">
+                        <i class="fas fa-user"></i>
+                        <span>Sobre Mí</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#habilidades" class="nav-link">
+                        <i class="fas fa-cogs"></i>
+                        <span>Habilidades</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#proyectos" class="nav-link">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>Proyectos</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contacto</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Botones de acción -->
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#contacto" class="nav-cta-btn">
+                    <span>Contrátame</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Menú hamburguesa -->
+            <div class="hamburger" id="hamburger">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de progreso de scroll -->
+        <div class="scroll-progress-bar"></div>
+    </nav>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="typing-text">Hola, soy </span>
+                    <span class="highlight">Luis Fernando Caicedo</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Estudiante de Ingeniería de Sistemas apasionado por la tecnología, ciberseguridad e innovación sostenible. 
+                    Desarrollando soluciones creativas que transforman ideas en realidad digital.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        Ver Proyectos
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contactar
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-container">
+                    <div class="profile-bg"></div>
+                    <img src="https://via.placeholder.com/400x400/333/fff?text=Tu+Foto" alt="Perfil" class="profile-img">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Soy <span class="highlight">Luis Fernando Caicedo Sánchez</span>, estudiante de Ingeniería de Sistemas 
+                        en la Institución Universitaria Antonio José Camacho. Actualmente he finalizado séptimo semestre, 
+                        y a lo largo de mi formación he desarrollado habilidades sólidas en desarrollo de software, 
+                        aplicaciones web, y gestión de proyectos con metodologías ágiles.
+                    </p>
+                    <p>
+                        Me apasiona la <span class="highlight">tecnología, la ciberseguridad y la innovación sostenible</span>, 
+                        lo que me ha llevado a desarrollar proyectos en áreas como el desarrollo web full-stack, 
+                        bases de datos, y arquitectura de software. Me enfoco en crear aplicaciones escalables, 
+                        eficientes y con excelente experiencia de usuario.
+                    </p>
+                    
+                    <div class="education-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Formación Académica</h3>
+                        <div class="education-item">
+                            <div class="education-info">
+                                <h4>Ingeniería de Sistemas</h4>
+                                <p class="institution">Institución Universitaria Antonio José Camacho</p>
+                                <p class="period">2021 - 2025 (En curso)</p>
+                                <p class="description">
+                                    Enfoque en desarrollo de software, bases de datos, metodologías ágiles, 
+                                    ciberseguridad e innovación tecnológica sostenible.
+                                </p>
+                            </div>
+                            <div class="education-status">
+                                <span class="semester-badge">8° Semestre</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="certifications-section">
+                        <h3><i class="fas fa-certificate"></i> Certificaciones Profesionales</h3>
+                        
+                        <div class="certifications-grid">
+                            <div class="cert-card">
+                                <div class="cert-status active">Vigente</div>
+                                <div class="cert-header">
+                                    <i class="fas fa-shield-alt cert-icon"></i>
+                                    <div class="cert-title">
+                                        <h4>Certificación en Ciberseguridad</h4>
+                                        <span class="cert-year">2023</span>
+                                    </div>
+                                </div>
+                                <p class="cert-org">🏛️ Universidad de Antioquia</p>
+                                <p class="cert-skills">📋 Hacking ético, análisis de vulnerabilidades, metodología PTES, seguridad ofensiva</p>
+                            </div>
+
+                            <div class="cert-card">
+                                <div class="cert-status active">Vigente hasta 2027</div>
+                                <div class="cert-header">
+                                    <i class="fas fa-tasks cert-icon"></i>
+                                    <div class="cert-title">
+                                        <h4>Scrum Foundation Professional Certificate (SFPC™)</h4>
+                                        <span class="cert-year">2024</span>
+                                    </div>
+                                </div>
+                                <p class="cert-org">🏛️ Certiprof® International</p>
+                                <p class="cert-skills">📋 Metodologías ágiles, gestión de proyectos, frameworks Scrum, liderazgo de equipos</p>
+                            </div>
+
+                            <div class="cert-card">
+                                <div class="cert-status active">Completado</div>
+                                <div class="cert-header">
+                                    <i class="fas fa-code cert-icon"></i>
+                                    <div class="cert-title">
+                                        <h4>Desarrollo Web Full-Stack</h4>
+                                        <span class="cert-year">2022</span>
+                                    </div>
+                                </div>
+                                <p class="cert-org">🏛️ MinTIC - Universidad Industrial de Santander (200h)</p>
+                                <p class="cert-skills">📋 JavaScript, React, Node.js, bases de datos, APIs REST, Misión TIC 2022</p>
+                            </div>
+
+                            <div class="cert-card">
+                                <div class="cert-status active">Completado</div>
+                                <div class="cert-header">
+                                    <i class="fas fa-laptop-code cert-icon"></i>
+                                    <div class="cert-title">
+                                        <h4>Programación y Desarrollo de Software</h4>
+                                        <span class="cert-year">2022</span>
+                                    </div>
+                                </div>
+                                <p class="cert-org">🏛️ MinTIC - Universidad Industrial de Santander (200h)</p>
+                                <p class="cert-skills">📋 Python, Java, C#, arquitectura de software, patrones de diseño, buenas prácticas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Proyectos Desarrollados</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="4">0</span>
+                            <span class="stat-label">Certificaciones</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="95">0</span>
+                            <span class="stat-label">% Dedicación</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <h3>Tecnologías Principales</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Habilidades -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span>HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Vue.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span>Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>C#</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Bases de Datos</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span>MySQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>PostgreSQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>MongoDB</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Redis</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> DevOps</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span>Docker</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="82"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>AWS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="78"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Git</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>CI/CD</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="desktop">Desktop</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/00ff88?text=E-Commerce+Platform" alt="Proyecto 1">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Plataforma E-Commerce</h3>
+                        <p>Sistema completo de comercio electrónico con React, Node.js y MongoDB. Incluye panel de administración y pasarela de pagos.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/ff6b6b?text=Task+Manager" alt="Proyecto 2">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gestor de Tareas</h3>
+                        <p>Aplicación web para gestión de proyectos y tareas con funcionalidades de colaboración en tiempo real.</p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>Socket.io</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/4ecdc4?text=Fitness+App" alt="Proyecto 3">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>App de Fitness</h3>
+                        <p>Aplicación móvil para seguimiento de entrenamientos y nutrición con análisis de datos personalizado.</p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Charts.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="desktop">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/ffd93d?text=Inventory+System" alt="Proyecto 4">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de Inventario</h3>
+                        <p>Aplicación de escritorio para gestión de inventarios con reportes avanzados y control de usuarios.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Tkinter</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/a8e6cf?text=API+REST" alt="Proyecto 5">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>API REST Microservicios</h3>
+                        <p>Arquitectura de microservicios con Docker, implementando mejores prácticas de desarrollo backend.</p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>Docker</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/1a1a1a/ff8b94?text=Dashboard+Analytics" alt="Proyecto 6">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dashboard de Analytics</h3>
+                        <p>Panel de control con visualización de datos en tiempo real y métricas de negocio.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>D3.js</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¡Hablemos!</h3>
+                    <p>Estoy siempre abierto a discutir nuevos proyectos, oportunidades laborales o simplemente charlar sobre tecnología.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>tu.email@ejemplo.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Teléfono</h4>
+                                <p>+57 123 456 7890</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Ubicación</h4>
+                                <p>Colombia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Ingeniero de Sistemas. Todos los derechos reservados.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#sobre-mi">Sobre Mí</a>
+                    <a href="#proyectos">Proyectos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script-nuevo.js"></script>
+</body>
+</html>
