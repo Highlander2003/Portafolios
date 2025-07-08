@@ -524,10 +524,13 @@ body {
   width: 100%;
   margin: 0 auto;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   z-index: 2;
+}
+
+.hero-text {
+  max-width: 100%;
+  min-width: 0;
+  width: 100%; /* Asegurar que ocupe todo el espacio disponible */
 }
 
 .hero-title {
@@ -537,33 +540,34 @@ body {
   margin-bottom: var(--spacing-md);
   display: block;
   min-height: 85px;
-  white-space: nowrap;
-  overflow: visible;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: baseline; /* Alinear todos los elementos en la línea base */
+  flex-wrap: wrap;
 }
 
 .typing-text {
   display: inline-block;
-  overflow: hidden;
+  position: relative;
   white-space: nowrap;
-  width: 0;
+  width: 180px; /* Ancho ajustado exacto para "Hola, soy " */
+  overflow: hidden;
   border-right: 3px solid var(--primary-color);
-  animation: typing 4s steps(12) infinite, blink 1s infinite;
-  min-width: 0;
-  vertical-align: baseline;
-  font-size: inherit;
-  line-height: inherit;
-  color: var(--text-primary);
+  animation: typing 3s ease-out forwards, blink 1s infinite 3s; /* typing una vez, luego blink continuo */
+  vertical-align: baseline; /* Alinear con la línea base del texto */
+  line-height: inherit; /* Heredar la altura de línea del padre */
 }
 
 @keyframes typing {
   0% {
     width: 0;
   }
-  25%, 75% {
-    width: 180px;
+  50% {
+    width: 180fpx; /* Ancho exacto del texto "Hola, soy " */
   }
   100% {
-    width: 0;
+    width: 180px; /* Mantener texto completo visible */
   }
 }
 
@@ -1340,9 +1344,13 @@ body {
 
 .certifications-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-template-rows: repeat(2, 1fr) !important;
   gap: var(--spacing-lg) !important;
   margin-top: var(--spacing-md) !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;
 }
 
 .cert-card {
@@ -1356,7 +1364,6 @@ body {
   position: relative !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   overflow: hidden !important;
-  backdrop-filter: blur(10px) !important;
 }
 
 .cert-card::before {
@@ -1376,7 +1383,6 @@ body {
   mask-composite: exclude;
   -webkit-mask-composite: xor;
   opacity: 0;
-  transition: opacity 0.4s ease;
 }
 
 .cert-card:hover::before {
@@ -1476,7 +1482,6 @@ body {
   background: rgba(0, 0, 0, 0.2) !important;
   border-radius: var(--radius-sm) !important;
   border-left: 3px solid var(--secondary-color) !important;
-  backdrop-filter: blur(5px) !important;
 }
 
 .cert-skills::before {
@@ -1796,7 +1801,9 @@ body {
   }
   
   .certifications-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: var(--spacing-md) !important;
   }
   
   .stats {
@@ -1855,10 +1862,15 @@ body {
   
   .tech-grid,
   .skills-grid,
-  .projects-grid,
-  .certifications-grid {
+  .projects-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
+  }
+  
+  .certifications-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: var(--spacing-sm) !important;
   }
   
   .stats {
@@ -2113,5 +2125,23 @@ body {
 @media (max-width: 480px) {
   .responsive-container {
     padding: 0 var(--spacing-xs);
+  }
+}
+
+/* Certificaciones mantiene la matriz 2x2 en tablets */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--spacing-md) !important;
+  }
+}
+
+/* Certificaciones en escritorio - forzar matriz 2x2 */
+@media (min-width: 1025px) {
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: var(--spacing-lg) !important;
+    max-width: 100% !important;
   }
 }
