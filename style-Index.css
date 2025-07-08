@@ -551,7 +551,7 @@ body {
   display: inline-block;
   position: relative;
   white-space: nowrap;
-  width: 180px; /* Ancho ajustado exacto para "Hola, soy " */
+  width: 350px; /* Ancho ajustado exacto para "Hola, soy " */
   overflow: hidden;
   border-right: 3px solid var(--primary-color);
   animation: typing 3s ease-out forwards, blink 1s infinite 3s; /* typing una vez, luego blink continuo */
@@ -567,7 +567,7 @@ body {
     width: 180fpx; /* Ancho exacto del texto "Hola, soy " */
   }
   100% {
-    width: 180px; /* Mantener texto completo visible */
+    width: 350px; /* Mantener texto completo visible */
   }
 }
 
