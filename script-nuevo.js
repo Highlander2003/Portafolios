@@ -535,15 +535,18 @@ window.addEventListener('scroll', throttle(() => {
 
 // Runtime responsive para elementos dinámicos
 function initResponsiveRuntime() {
+    const cursor = document.querySelector('.cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.querySelector('.hamburger');
+
     const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-    // Cursor dinámico: desactivar en touch
     if (isTouch) {
         if (cursor) cursor.style.display = 'none';
         if (cursorDot) cursorDot.style.display = 'none';
     }
 
-    // Partículas dinámicas según ancho
     const particlesContainer = document.getElementById('particles');
     const renderParticles = () => {
         if (!particlesContainer) return;
@@ -563,7 +566,6 @@ function initResponsiveRuntime() {
 
     renderParticles();
 
-    // Cerrar menú móvil al volver a desktop
     const syncMenuByWidth = () => {
         if (window.innerWidth > 1023 && navMenu && hamburger) {
             navMenu.classList.remove('active');
