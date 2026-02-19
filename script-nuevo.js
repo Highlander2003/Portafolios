@@ -342,23 +342,38 @@ document.addEventListener('DOMContentLoaded', function() {
     function initProjectFilters() {
         const filterButtons = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
-        
+        let currentFilter = 'all';
+
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                const filterValue = button.getAttribute('data-filter');
-                
-                // Actualizar botón activo
+                const rawFilter = (button.getAttribute('data-filter') || 'all').toLowerCase();
+                const filterValue = rawFilter === 'deskot' ? 'desktop' : rawFilter; // tolera typo
+
+                if (filterValue === currentFilter) return;
+                currentFilter = filterValue;
+
+                // Botón activo
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                
-                // Filtrar proyectos
+
                 projectCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    
-                    if (filterValue === 'all' || category === filterValue) {
-                        card.classList.remove('hidden');
+                    const categoryRaw = (card.getAttribute('data-category') || '').toLowerCase();
+                    const category = categoryRaw === 'deskot' ? 'desktop' : categoryRaw;
+                    const match = filterValue === 'all' || category === filterValue;
+
+                    if (match) {
+                        card.classList.remove('is-hidden', 'is-hiding');
+                        // reinicia animación de entrada
+                        card.classList.remove('is-showing');
+                        requestAnimationFrame(() => card.classList.add('is-showing'));
+                        setTimeout(() => card.classList.remove('is-showing'), 320);
                     } else {
-                        card.classList.add('hidden');
+                        card.classList.remove('is-showing');
+                        card.classList.add('is-hiding');
+                        setTimeout(() => {
+                            card.classList.add('is-hidden');
+                            card.classList.remove('is-hiding');
+                        }, 260);
                     }
                 });
             });
