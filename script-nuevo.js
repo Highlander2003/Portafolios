@@ -382,20 +382,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Formulario de contacto
     function initContactForm() {
-        const contactForm = document.querySelector('.contact-form');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Aquí puedes agregar la lógica para enviar el formulario
-                // const formData = new FormData(contactForm);
-                
-                // Simulación de envío exitoso
-                alert('¡Mensaje enviado correctamente! Te contactaré pronto.');
-                contactForm.reset();
-            });
-        }
+        const contactForm = document.querySelector('#contact-form');
+        const status = document.querySelector('#form-status');
+        const submitBtn = document.querySelector('#contact-submit');
+
+        if (!contactForm) return;
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+                status.textContent = 'Revisa los campos obligatorios.';
+                status.className = 'form-status error';
+                contactForm.reportValidity();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            status.textContent = 'Enviando mensaje...';
+            status.className = 'form-status';
+
+            // Simulación de envío
+            await new Promise(resolve => setTimeout(resolve, 900));
+
+            status.textContent = 'Mensaje enviado correctamente. Te contactaré pronto.';
+            status.className = 'form-status success';
+            contactForm.reset();
+            submitBtn.disabled = false;
+        });
     }
     
     // Efecto typewriter mejorado

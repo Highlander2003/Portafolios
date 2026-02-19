@@ -587,23 +587,25 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>¡Hablemos!</h3>
-                    <p>Estoy siempre abierto a discutir nuevos proyectos, oportunidades laborales o simplemente charlar sobre tecnología.</p>
-                    
+                    <p>Estoy disponible para proyectos, colaboraciones y oportunidades profesionales.</p>
+
                     <div class="contact-methods">
-                        <div class="contact-method">
+                        <a class="contact-method" href="mailto:tu.email@ejemplo.com" aria-label="Enviar correo">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
                                 <p>tu.email@ejemplo.com</p>
                             </div>
-                        </div>
-                        <div class="contact-method">
+                        </a>
+
+                        <a class="contact-method" href="tel:+571234567890" aria-label="Llamar por teléfono">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>Teléfono</h4>
                                 <p>+57 123 456 7890</p>
                             </div>
-                        </div>
+                        </a>
+
                         <div class="contact-method">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
@@ -614,27 +616,34 @@
                     </div>
 
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
-                <form class="contact-form">
+                <form class="contact-form" id="contact-form" novalidate>
                     <div class="form-group">
-                        <input type="text" placeholder="Tu nombre" required>
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" minlength="3" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Tu email" required>
+                        <label for="email">Correo</label>
+                        <input id="email" name="email" type="email" placeholder="Tu email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Asunto" required>
+                        <label for="asunto">Asunto</label>
+                        <input id="asunto" name="asunto" type="text" placeholder="Asunto" minlength="4" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" rows="5" minlength="10" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">
+
+                    <p class="form-status" id="form-status" aria-live="polite"></p>
+
+                    <button type="submit" class="btn btn-primary" id="contact-submit">
                         <i class="fas fa-paper-plane"></i>
                         Enviar Mensaje
                     </button>
