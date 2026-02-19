@@ -386,7 +386,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const status = document.querySelector('#form-status');
         const submitBtn = document.querySelector('#contact-submit');
 
-        if (!contactForm) return;
+        if (!contactForm || !status || !submitBtn) return;
+
+        // Inicializa EmailJS con tu Public Key
+        emailjs.init({
+            publicKey: 'TU_PUBLIC_KEY_REAL'
+        });
 
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -402,13 +407,24 @@ document.addEventListener('DOMContentLoaded', function() {
             status.textContent = 'Enviando mensaje...';
             status.className = 'form-status';
 
-            // Simulación de envío
-            await new Promise(resolve => setTimeout(resolve, 900));
+            try {
+                await emailjs.send('service_fls4pum', 'template_yvmg8zh', {
+                    from_name: document.querySelector('#nombre')?.value.trim(),
+                    reply_to: document.querySelector('#email')?.value.trim(),
+                    subject: document.querySelector('#asunto')?.value.trim(),
+                    message: document.querySelector('#mensaje')?.value.trim()
+                });
 
-            status.textContent = 'Mensaje enviado correctamente. Te contactaré pronto.';
-            status.className = 'form-status success';
-            contactForm.reset();
-            submitBtn.disabled = false;
+                status.textContent = 'Mensaje enviado correctamente.';
+                status.className = 'form-status success';
+                contactForm.reset();
+            } catch (error) {
+                console.error(error);
+                status.textContent = 'No se pudo enviar. Intenta de nuevo.';
+                status.className = 'form-status error';
+            } finally {
+                submitBtn.disabled = false;
+            }
         });
     }
     
@@ -503,9 +519,20 @@ function toggleTheme() {
 
 // Manejar errores de imágenes
 document.addEventListener('error', (e) => {
-    if (e.target.tagName === 'IMG') {
-        e.target.src = 'https://via.placeholder.com/400x400/333/fff?text=Imagen+No+Disponible';
-    }
+    const img = e.target;
+    if (!img || img.tagName !== 'IMG') return;
+    if (img.dataset.fallbackApplied === 'true') return;
+
+    img.dataset.fallbackApplied = 'true';
+    img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="500">
+          <rect width="100%" height="100%" fill="#1a1a1a"/>
+          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                fill="#00ff88" font-family="Arial" font-size="28">
+            Imagen no disponible
+          </text>
+        </svg>
+    `);
 }, true);
 
 // Optimización de rendimiento
