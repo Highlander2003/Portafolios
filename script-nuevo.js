@@ -434,6 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar todas las funciones
     function init() {
+        initResponsiveRuntime();
         createParticles();
         initCursor();
         initNavigation();
@@ -502,3 +503,52 @@ const throttle = (func, delay) => {
 window.addEventListener('scroll', throttle(() => {
     // Lógica de scroll optimizada se maneja en las funciones individuales
 }, 16));
+
+// Runtime responsive para elementos dinámicos
+function initResponsiveRuntime() {
+    const isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+    // Cursor dinámico: desactivar en touch
+    if (isTouch) {
+        if (cursor) cursor.style.display = 'none';
+        if (cursorDot) cursorDot.style.display = 'none';
+    }
+
+    // Partículas dinámicas según ancho
+    const particlesContainer = document.getElementById('particles');
+    const renderParticles = () => {
+        if (!particlesContainer) return;
+        particlesContainer.innerHTML = '';
+        const w = window.innerWidth;
+        const count = w <= 480 ? 12 : w <= 768 ? 20 : w <= 1024 ? 30 : 50;
+
+        for (let i = 0; i < count; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 10 + 's';
+            p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(p);
+        }
+    };
+
+    renderParticles();
+
+    // Cerrar menú móvil al volver a desktop
+    const syncMenuByWidth = () => {
+        if (window.innerWidth > 1023 && navMenu && hamburger) {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    };
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            renderParticles();
+            syncMenuByWidth();
+        }, 150);
+    });
+}
